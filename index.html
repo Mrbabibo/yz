@@ -9,6 +9,8 @@
 <script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
 <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
 <script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
+ <!-- 引入 http-vue-loader -->
+ <script src="https://unpkg.com/http-vue-loader"></script>
 <body>
 	<div id="app" v-cloak>
 		<div class="title">我的应用</div>
@@ -17,12 +19,12 @@
 				{{item.name}}
 			</div> 
 		</main>
-		
+		<my-component></my-component>
 	</div>
 	<script src="jquery-1.8.3.js"></script>
 </body>
 <style>
-	  [v-cloak] {
+	[v-cloak] {
         display: none;
     }
 	.title{
@@ -89,6 +91,8 @@
 <script src="./popup.js"></script>
 
 <script>
+	// 使用httpVueLoader
+    Vue.use(httpVueLoader);
     var vm = new Vue({
         el: '#app',
         data() {
@@ -114,6 +118,10 @@
                     'E': 'e邮宝',
                 }
             }
+        },
+		components: {
+            // 将组建加入组建库
+            'my-component': 'url:./component/myComponent.vue'
         },
         methods: {
 			gotoNewTab(item){
