@@ -14,6 +14,8 @@ module.exports = {
  
 <style>
 .hello {
+    width: 200px;
+    height: 100px;
     background-color: #ffe;
 }
 </style>
