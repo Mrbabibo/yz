@@ -1,12 +1,12 @@
 <template>
-    <div class="hello">Hello {{who}}</div>
+    <div class="hello"> {{who}}</div>
 </template>
  
 <script>
 module.exports = {
     data: function() {
         return {
-            who: 'helloworld'
+            who: ''
         }
     }
 }
