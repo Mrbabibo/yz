@@ -92,6 +92,20 @@
 <script src="./popup.js"></script>
 
 <script>
+	 
+
+	 const say ={
+		 id :'2',
+		 d(){
+			 return this.id
+		 },
+		 pp:()=>{
+			 console.log(this)
+			return this.id + 1
+		 }
+	 }
+	 say.d()
+	 say.pp()
 	// 使用httpVueLoader
     Vue.use(httpVueLoader);
     var vm = new Vue({
@@ -99,6 +113,7 @@
         data() {
             return {
 				btnList:[
+					{name:"Chrome 版本下载",currentSrc:'https://www.chromedownloads.net/chrome64win/'},
 					{name:"工作邮箱",currentSrc:'https://mail.postoa.com.cn/'},
 					{name:"集团内网",currentSrc:'https://office.postoa.com.cn/jt/login.jsp'},
 					{name:"PC端OA",currentSrc:'https://211.156.194.132/jsp/indexpage/index_work_frameset.jsp?modelID=027'},
@@ -130,7 +145,7 @@
 			}
         },
         mounted() {
-       
+              
         }
     });
 </script>
