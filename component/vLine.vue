@@ -1,16 +1,11 @@
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/v-charts/lib/index.min.js"></script>
 
- <template>
-  
-<ve-pie  width="500px" :data="chartData2" ></ve-pie>
 
-  </template>
+<template>
+   <ve-pie  width="500px" :data="chartData2" ></ve-pie>
+</template>
+ 
 <script>
-
-  // 导出模块
-  export default {
+module.exports = {
     data() {
       return {
       
@@ -27,6 +22,5 @@
     
      }
     }
-
-  };
+}
 </script>

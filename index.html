@@ -1,152 +1,195 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8"/>
-	<title>我的应用</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<script src="./rem.js"></script>
-</head>
-<script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
-<script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
-<script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
- <!-- 引入 http-vue-loader -->
- <script src="https://unpkg.com/http-vue-loader"></script>
-<body>
-	<div id="app" v-cloak>
-		<div class="title">我的应用</div>
-		<main>
-			<div class="btn" type="submit" v-for='item in btnList' @click='gotoNewTab(item)'>
-				{{item.name}}
-			</div> 
-		</main>
-		<my-component></my-component>
-	</div>
-	<script src="jquery-1.8.3.js"></script>
-	<script color="0,0,0" opacity="0.5" count="70" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js"></script>
-</body>
-<style>
-	[v-cloak] {
-        display: none;
+  <head>
+    <meta charset="utf-8" />
+    <title>我的应用</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <script src="./rem.js"></script>
+  </head>
+  <script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
+  <script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
+  <!-- 引入 http-vue-loader -->
+  <script src="https://unpkg.com/http-vue-loader"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/v-charts/lib/index.min.js"></script>
+  <body>
+    <div id="app" v-cloak>
+      <div class="title">我的应用</div>
+      <main>
+        <div
+          class="btn"
+          type="submit"
+          v-for="item in btnList"
+          @click="gotoNewTab(item)"
+        >
+          {{item.name}}
+        </div>
+      </main>
+      <my-component></my-component>
+      <my-line></my-line>
+    </div>
+    <script src="jquery-1.8.3.js"></script>
+    <script
+      color="0,0,0"
+      opacity="0.5"
+      count="70"
+      src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js"
+    ></script>
+  </body>
+  <style>
+    [v-cloak] {
+      display: none;
     }
-	.title{
-		font-size: 30px;
-		color: #667273;
-		text-align: center;
-	}
-	main{
-		border: 1px solid #667273;
-		display: flex;
-		flex-wrap: wrap;
-		/* flex-direction: column; */
-		align-items: center;
-		justify-content: end;
-	}
-	.btn{
-		background:#1AAB8A;
-		border:none;
-		position:relative;
-		transition:800ms ease all;
-		outline:none;
-		text-align: center;
-		width: 150px;   
-		min-height: 20px;   
-		display: block;   
-		background-color: #fff;   
-		border: 1px solid #ccc;   
-		color: #000;   
-		padding: 9px 1px;   
-		font-size: 15px;   
-		line-height: normal;   
-		border-radius: 5px;   
-		margin: 10px;   
-		cursor: pointer;
-	}
-	.btn:hover{
-		background:#fff;
-		color:#1AAB8A;
-	}
-	.btn:before,.btn:after{
-		content:'';
-		position:absolute;
-		top:0;
-		right:0;
-		height:2px;
-		width:0;
-		background: #1AAB8A;
-		transition:400ms ease all;
-	}
-	.btn:after{
-		right:inherit;
-		top:inherit;
-		left:0;
-		bottom:0;
-	}
-	.btn:hover:before,.btn:hover:after{
-		width:100%;
-		transition:800ms ease all;
-	}
-</style>
+    .title {
+      font-size: 30px;
+      color: #667273;
+      text-align: center;
+    }
+    main {
+      border: 1px solid #667273;
+      display: flex;
+      flex-wrap: wrap;
+      /* flex-direction: column; */
+      align-items: center;
+      justify-content: end;
+    }
+    .btn {
+      background: #1aab8a;
+      border: none;
+      position: relative;
+      transition: 800ms ease all;
+      outline: none;
+      text-align: center;
+      width: 150px;
+      min-height: 20px;
+      display: block;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      color: #000;
+      padding: 9px 1px;
+      font-size: 15px;
+      line-height: normal;
+      border-radius: 5px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #fff;
+      color: #1aab8a;
+    }
+    .btn:before,
+    .btn:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 2px;
+      width: 0;
+      background: #1aab8a;
+      transition: 400ms ease all;
+    }
+    .btn:after {
+      right: inherit;
+      top: inherit;
+      left: 0;
+      bottom: 0;
+    }
+    .btn:hover:before,
+    .btn:hover:after {
+      width: 100%;
+      transition: 800ms ease all;
+    }
+  </style>
 </html>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+<script
+  type="text/javascript"
+  src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"
+></script>
 <script src="./popup.js"></script>
 
 <script>
-	 
-
-	 const say ={
-		 id :'2',
-		 d(){
-			 return this.id
-		 },
-		 pp:()=>{
-			 console.log(this)
-			return this.id + 1
-		 }
-	 }
-	 say.d()
-	 say.pp()
-	// 使用httpVueLoader
-    Vue.use(httpVueLoader);
-    var vm = new Vue({
-        el: '#app',
-        data() {
-            return {
-				btnList:[
-					{name:"Chrome 版本下载",currentSrc:'https://www.chromedownloads.net/chrome64win/'},
-					{name:"工作邮箱",currentSrc:'https://mail.postoa.com.cn/'},
-					{name:"集团内网",currentSrc:'https://office.postoa.com.cn/jt/login.jsp'},
-					{name:"PC端OA",currentSrc:'https://211.156.194.132/jsp/indexpage/index_work_frameset.jsp?modelID=027'},
-					{name:"中邮网院",currentSrc:'https://www.cpoc.cn/'},
-					{name:"新一代",currentSrc:'https://192.168.112.177/portal/a'},
-					{name:"五大体系蓝湖",currentSrc:'https://lanhuapp.com/web/#/item/project/stage?pid=13e9eb3e-6ec7-4116-8ca9-7b73b8c59469'},
-					{name:"个人在线日报",currentSrc:'https://docs.qq.com/sheet/DRHJnZ1pOeGNCU0lV?tab=BB08J8'},
-					{name:"石墨个人记事本",currentSrc:'https://shimo.im/docs/drRCKQJW3VdyJ3dY'},
-					{name:"请假系统新版",currentSrc:'https://211.156.200.177/jsp/employeeHome.jsp'},
-					{name:"请假系统老版",currentSrc:'https://211.156.194.132/jsp/index_oldblue.jsp#'},
-					{name:"时限看板蓝湖",currentSrc:'https://lanhuapp.com/web/#/item/project/detailDetach?type=share_mark&pid=c6c21f92-92d2-4a86-80c0-1af25ac9b141&activeSectionId=&toRouteName=ItemProjectEditor&teamId=e3d3252e-b8bd-4198-9acb-e86c14dcc5ce&param=9ef298e3-d82b-464f-b901-55f046ce750a&project_id=c6c21f92-92d2-4a86-80c0-1af25ac9b141&image_id=b8fdcaa2-0323-4a62-a6cd-1787209cfca1&fromEditor=true'}
-				],
-                cardMap: {
-                    'A': '总体',
-                    'B': '特快',
-                    'K': '快包',
-                    'G': '国际',
-                    'E': 'e邮宝',
-                }
-            }
-        },
-		components: {
-            // 将组建加入组建库
-            'my-component': 'url:./component/myComponent.vue'
-        },
-        methods: {
-			gotoNewTab(item){
-				window.open(item.currentSrc);
-			}
-        },
-        mounted() {
-              
-        }
-    });
+  const say = {
+    id: "2",
+    d() {
+      return this.id;
+    },
+    pp: () => {
+      console.log(this);
+      return this.id + 1;
+    },
+  };
+  say.d();
+  say.pp();
+  // 使用httpVueLoader
+  Vue.use(httpVueLoader);
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        btnList: [
+          {
+            name: "Chrome 版本下载",
+            currentSrc: "https://www.chromedownloads.net/chrome64win/",
+          },
+          { name: "工作邮箱", currentSrc: "https://mail.postoa.com.cn/" },
+          {
+            name: "集团内网",
+            currentSrc: "https://office.postoa.com.cn/jt/login.jsp",
+          },
+          {
+            name: "PC端OA",
+            currentSrc:
+              "https://211.156.194.132/jsp/indexpage/index_work_frameset.jsp?modelID=027",
+          },
+          { name: "中邮网院", currentSrc: "https://www.cpoc.cn/" },
+          { name: "新一代", currentSrc: "https://192.168.112.177/portal/a" },
+          {
+            name: "五大体系蓝湖",
+            currentSrc:
+              "https://lanhuapp.com/web/#/item/project/stage?pid=13e9eb3e-6ec7-4116-8ca9-7b73b8c59469",
+          },
+          {
+            name: "个人在线日报",
+            currentSrc:
+              "https://docs.qq.com/sheet/DRHJnZ1pOeGNCU0lV?tab=BB08J8",
+          },
+          {
+            name: "石墨个人记事本",
+            currentSrc: "https://shimo.im/docs/drRCKQJW3VdyJ3dY",
+          },
+          {
+            name: "请假系统新版",
+            currentSrc: "https://211.156.200.177/jsp/employeeHome.jsp",
+          },
+          {
+            name: "请假系统老版",
+            currentSrc: "https://211.156.194.132/jsp/index_oldblue.jsp#",
+          },
+          {
+            name: "时限看板蓝湖",
+            currentSrc:
+              "https://lanhuapp.com/web/#/item/project/detailDetach?type=share_mark&pid=c6c21f92-92d2-4a86-80c0-1af25ac9b141&activeSectionId=&toRouteName=ItemProjectEditor&teamId=e3d3252e-b8bd-4198-9acb-e86c14dcc5ce&param=9ef298e3-d82b-464f-b901-55f046ce750a&project_id=c6c21f92-92d2-4a86-80c0-1af25ac9b141&image_id=b8fdcaa2-0323-4a62-a6cd-1787209cfca1&fromEditor=true",
+          },
+        ],
+      };
+    },
+    components: {
+      // 将组建加入组建库
+      "my-component": "url:./component/myComponent.vue",
+      "my-line": "url:./component/vLine.vue",
+    },
+    methods: {
+      gotoNewTab(item) {
+        window.open(item.currentSrc);
+      },
+    },
+    mounted() {},
+  });
 </script>
-
